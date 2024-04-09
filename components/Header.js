@@ -1,5 +1,6 @@
 import { Flex, Button, HStack, chakra } from "@chakra-ui/react";
 import Link from "next/link";
+import styles from "@/styles/Layout.module.css";
 
 const CTA = "Get Started";
 export default function Header() {
@@ -11,16 +12,21 @@ export default function Header() {
   return (
     <chakra.header id="header">
       <Flex w="100%" px="6" py="5" align="center" justify="space-between">
-        {/* <Image src={Logo.src} h="50px" /> */}
         <HStack as="nav" spacing="5">
-          {data.map((item, i) => (
-            <Link href={item.url} key={i}>
-              <Button variant="nav"> {item.name} </Button>
+          {data.map((item) => (
+            <Link href={item.url} key={item.name}>
+              <Button
+                variant="nav"
+                colorScheme="whiteAlpha"
+                className={styles.sections}
+              >
+                {item.name}
+              </Button>
             </Link>
           ))}
         </HStack>
         <HStack>
-          <Button aria-label={CTA} variant="outline">
+          <Button aria-label={CTA} colorScheme="whiteAlpha">
             {CTA}
           </Button>
         </HStack>
