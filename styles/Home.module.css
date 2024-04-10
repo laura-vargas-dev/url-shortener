@@ -1,7 +1,23 @@
+.main {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
 .title {
   color: white;
   font-size: 35px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 5%;
+}
+
+.description,
+.descriptionAlert {
+  width: 100%;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.descriptionAlert {
+  font-weight: bold;
 }

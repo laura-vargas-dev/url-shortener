@@ -62,8 +62,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={styles.main}>
         <h1 className={styles.title}>Url Shortener</h1>
+        <p className={styles.description}>
+          The Short Link Service is a website where you can significantly
+          shorten any link while still functioning exactly like the original
+          long link. With just one click, you can shorten the long URL.
+        </p>
         <Stack spacing={4}>
           <InputGroup>
             <InputLeftAddon background="#cdb4db">https://</InputLeftAddon>
@@ -74,9 +79,9 @@ export default function Home() {
               name="url"
               required
               autoComplete="off"
-              w="30rem"
+              w="100%"
               color="#fff"
-              _placeholder={{ color: 'inherit' }}
+              _placeholder={{ color: "inherit" }}
             />
             <InputRightElement width="4.5rem" background="#cdb4db">
               <Button
@@ -93,7 +98,7 @@ export default function Home() {
         {shortUrl !== null && (
           <Stack spacing={4} mt="4">
             <InputGroup>
-              <InputLeftAddon>Short url</InputLeftAddon>
+              <InputLeftAddon background="#cdb4db">Short url</InputLeftAddon>
               <Input
                 defaultValue={shortUrl}
                 placeholder="Short url"
@@ -101,14 +106,23 @@ export default function Home() {
                 name="url"
                 required
               />
-              <InputRightElement width="4.5rem">
-                <Button h="1.75rem" size="sm" onClick={copyUrl}>
+              <InputRightElement width="4.5rem" background="#cdb4db">
+                <Button
+                  h="1.75rem"
+                  size="sm"
+                  onClick={copyUrl}
+                  colorScheme="whiteAlpha"
+                >
                   Copy
                 </Button>
               </InputRightElement>
             </InputGroup>
           </Stack>
         )}
+        <p className={styles.descriptionAlert}>
+          This shortened URL will only work for 5 minutes. If you want the URL
+          to work indefinitely, please create an account.
+        </p>
       </main>
     </>
   );

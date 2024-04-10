@@ -2,7 +2,7 @@ import { Container, Flex, Link, Text } from "@chakra-ui/react";
 
 export default function Footer() {
   return (
-    <Container>
+    <Container minWidth='100%' position="fixed" bottom="0" padding="1rem">
       <Flex
         mx="auto"
         d="column"
@@ -10,12 +10,8 @@ export default function Footer() {
         justify="center"
         textAlign="center"
       >
-        <Text fontSize="sm" color="gray.500">
-          Made with{" "}
-          <span role="img" aria-label="love">
-            ❤️
-          </span>{" "}
-          by{" "}
+        <Text fontSize="sm" color="#fff">
+          Made with <span aria-label="love">❤️</span> by{" "}
           <Link href="//github.com/laura-vargas-dev/url-shortener">
             Laura Vargas
           </Link>
