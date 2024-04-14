@@ -2,11 +2,11 @@ import { Flex, Button, HStack, chakra } from "@chakra-ui/react";
 import Link from "next/link";
 import styles from "@/styles/Layout.module.css";
 
-const CTA = "Get Started";
+const CTA = "Login";
 export default function Header() {
   const data = [
     { name: "short url", url: "/" },
-    { name: "validate url", url: "validate" },
+    // { name: "my url's", url: "list" },
   ];
 
   return (

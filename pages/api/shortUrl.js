@@ -12,7 +12,22 @@ export default async (req, res) => {
     return res.status(200).send(data);
   } catch (error) {
     if (error?.code === "P2002") {
-      return res.status(500).send({ error: "Oops!, url already exists" });
+      try {
+        const getUrl = await prisma.link.findUnique({
+          where: {
+            url: url,
+          },
+          select: {
+            url: true,
+            shortUrl: true,
+          },
+        });
+        return res.status(200).send(getUrl);
+      } catch (error) {
+        return res
+          .status(500)
+          .send({ error: "Oops!, something went wrong..." });
+      }
     }
     return res.status(500).send({ error: "Oops!, something went wrong..." });
   }

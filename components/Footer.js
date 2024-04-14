@@ -10,7 +10,7 @@ export default function Footer() {
         justify="center"
         textAlign="center"
       >
-        <Text fontSize="sm" color="#fff">
+        <Text fontSize="sm" color="#4a2574">
           Made with <span aria-label="love">❤️</span> by{" "}
           <Link href="//github.com/laura-vargas-dev/url-shortener">
             Laura Vargas

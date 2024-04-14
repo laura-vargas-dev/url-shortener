@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useRef, useState } from "react";
 import {
@@ -11,8 +10,6 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const inputRef = useRef();
@@ -71,7 +68,7 @@ export default function Home() {
         </p>
         <Stack spacing={4}>
           <InputGroup>
-            <InputLeftAddon background="#cdb4db">https://</InputLeftAddon>
+            <InputLeftAddon background="#924dbf">https://</InputLeftAddon>
             <Input
               ref={inputRef}
               placeholder="Url"
@@ -83,7 +80,7 @@ export default function Home() {
               color="#fff"
               _placeholder={{ color: "inherit" }}
             />
-            <InputRightElement width="4.5rem" background="#cdb4db">
+            <InputRightElement width="4.5rem" background="#924dbf">
               <Button
                 h="1.75rem"
                 size="sm"
@@ -98,7 +95,7 @@ export default function Home() {
         {shortUrl !== null && (
           <Stack spacing={4} mt="4">
             <InputGroup>
-              <InputLeftAddon background="#cdb4db">Short url</InputLeftAddon>
+              <InputLeftAddon background="#924dbf">Short url</InputLeftAddon>
               <Input
                 defaultValue={shortUrl}
                 placeholder="Short url"
@@ -106,7 +103,7 @@ export default function Home() {
                 name="url"
                 required
               />
-              <InputRightElement width="4.5rem" background="#cdb4db">
+              <InputRightElement width="4.5rem" background="#924dbf">
                 <Button
                   h="1.75rem"
                   size="sm"
@@ -117,12 +114,11 @@ export default function Home() {
                 </Button>
               </InputRightElement>
             </InputGroup>
+            <p className={styles.descriptionAlert}>
+              If you want to manage your shortened urls, please log in.
+            </p>
           </Stack>
         )}
-        <p className={styles.descriptionAlert}>
-          This shortened URL will only work for 5 minutes. If you want the URL
-          to work indefinitely, please create an account.
-        </p>
       </main>
     </>
   );

@@ -18,4 +18,6 @@ model Link {
   url        String    @unique
   createdAt  DateTime  @default(now())
   shortUrl   String    @unique
+  clicks     Int       @default(0)
+  email      String?
 }
