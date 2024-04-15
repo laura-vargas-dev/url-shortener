@@ -1,6 +1,6 @@
 import styles from "@/styles/Layout.module.css";
 import { Providers } from "@/app/providers";
-import { Center } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
@@ -17,9 +17,16 @@ export default function RootLayout({ children }) {
       <div className={styles.background}>
         <Header />
 
-        <Center height="600px">
-          <main>{children}</main>
-        </Center>
+        <main>
+          <Flex
+            w="100%"
+            px="6"
+            py="5"
+            align="flex-start"
+          >
+            {children}
+          </Flex>
+        </main>
 
         <Footer />
       </div>
