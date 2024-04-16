@@ -1,5 +1,6 @@
 .main {
-  max-width: 60%;
+  width: 100%;
+  max-width: 45rem;
   padding: 1rem;
   margin: 0 auto;
 }
@@ -9,32 +10,21 @@
   font-size: 35px;
   font-weight: bold;
   text-align: center;
-  margin: 5%;
+  margin: 1rem;
 }
 
 .description,
 .descriptionAlert {
   width: 100%;
   text-align: center;
-  margin: 7% 0;
+}
+
+.description {
+  margin: 2rem 0;
 }
 
 .descriptionAlert {
   color: #4a2574;
   font-weight: bold;
-}
-
-@media only screen and (max-width: 500px) {
-  .main {
-    max-width: 100%;
-    padding: 0 1rem;
-    margin: 0 auto;
-  }
-  .title {
-    margin: 0 5%;
-  }
-  .description,
-  .descriptionAlert {
-    margin: 5% 0;
-  }
+  margin: 1rem 0;
 }

@@ -10,11 +10,13 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
   const inputRef = useRef();
   const toast = useToast();
   const toastIdRef = useRef();
+  const { data: session } = useSession();
   const [shortUrl, setShortUrl] = useState(null);
 
   const handleSubmit = (e) => {
@@ -70,21 +72,22 @@ export default function Home() {
           <InputGroup>
             <InputLeftAddon background="#924dbf">https://</InputLeftAddon>
             <Input
-              ref={inputRef}
+              _placeholder={{ color: "inherit" }}
               placeholder="Url"
+              ref={inputRef}
               id="url"
               name="url"
-              required
               autoComplete="off"
               w="100%"
-              color="#fff"
-              _placeholder={{ color: "inherit" }}
+              color="#4a2574"
+              background="#fff"
+              focusBorderColor="#924dbf"
+              required
             />
             <InputRightElement width="4.5rem" background="#924dbf">
               <Button
                 h="1.75rem"
                 size="sm"
-                onClick={handleSubmit}
                 colorScheme="whiteAlpha"
               >
                 Short
@@ -101,6 +104,9 @@ export default function Home() {
                 placeholder="Short url"
                 id="url"
                 name="url"
+                color="#4a2574"
+                background="#fff"
+                focusBorderColor="#924dbf"
                 required
               />
               <InputRightElement width="4.5rem" background="#924dbf">
@@ -114,9 +120,11 @@ export default function Home() {
                 </Button>
               </InputRightElement>
             </InputGroup>
-            <p className={styles.descriptionAlert}>
-              If you want to manage your shortened urls, please log in.
-            </p>
+            {!session && (
+              <p className={styles.descriptionAlert}>
+                If you want to manage your shortened urls, please log in.
+              </p>
+            )}
           </Stack>
         )}
       </main>
