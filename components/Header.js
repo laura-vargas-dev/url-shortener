@@ -51,7 +51,11 @@ export default function Header() {
               <Button
                 aria-label={logout}
                 colorScheme="whiteAlpha"
-                onClick={() => signOut()}
+                onClick={async () => {
+                  await signOut({
+                    callbackUrl: "/"
+                  });
+                }}
               >
                 {logout}
               </Button>
