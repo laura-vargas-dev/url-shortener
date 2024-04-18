@@ -22,13 +22,14 @@ export default function Home() {
   const handleSubmit = (e) => {
     const currentUrl = window.location.href;
     e.preventDefault();
+    const email = session?.user?.email || null;
     const url = "https://" + inputRef.current.value;
     fetch("/api/shortUrl", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ url, email }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -89,6 +90,7 @@ export default function Home() {
                 h="1.75rem"
                 size="sm"
                 colorScheme="whiteAlpha"
+                onClick={handleSubmit}
               >
                 Short
               </Button>
@@ -100,13 +102,14 @@ export default function Home() {
             <InputGroup>
               <InputLeftAddon background="#924dbf">Short url</InputLeftAddon>
               <Input
-                defaultValue={shortUrl}
+                value={shortUrl}
                 placeholder="Short url"
                 id="url"
                 name="url"
                 color="#4a2574"
                 background="#fff"
                 focusBorderColor="#924dbf"
+                readOnly
                 required
               />
               <InputRightElement width="4.5rem" background="#924dbf">
