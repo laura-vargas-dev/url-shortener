@@ -1,3 +1,6 @@
+## URL Shortener
+This is a project made in NEXTjs that allows you to create a system to shorten urls, additionally allows the user to authenticate to be able to see the list and the number of times a shortened url has been used.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
